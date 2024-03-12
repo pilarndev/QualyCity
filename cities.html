@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/bsCustom.css" rel="stylesheet" />
+    <!--FONTAWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!--MAP-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+
+    <script src="../js/cities.js" type="module"></script>
+    <title>Results</title>
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <!--HEADER-->
+    <div id="header"></div>
+
+    <!--MAIN-->
+    <main class="d-flex flex-column">
+      <!--IMAGE-->
+      <div class="image-city position-relative"> 
+        <img alt="--city_name--" src="" class="w-100 h-100"/>
+        <div class="position-absolute bottom-0 start-0 bg-dark text-white px-1">
+          <span class="photographer-image fs-8"></span>
+        </div>
+      </div>
+
+      <!-- NAVBAR SECTIONS-->
+      <nav class="navbar justify-content-center navbar-expand-sm border-bottom">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#city-scores">LIFE QUALITY SCORE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#city-cost-of-living">COST OF LIVING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#city-salaries">SALARIES</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="px-md-12 px-4">
+        <!--CITY NAME AND FAVORITE-->
+        <div class="city-name d-flex align-items-center pt-4">
+          <h1></h1>
+          <i id="heart-icon" class="fa-heart fa-lg p-3" role="button"></i>
+          <div class="favorite-notification"></div>
+        </div>
+
+        <section id="city-info">
+          <div class="d-flex shadow pt-3 px-5 mb-3 bg-body-tertiary rounded">
+            <!--INFO WIKIPEDIA-->
+            <div class="d-flex flex-column justify-content-between me-4 my-3 w-50">
+              <div class="city-info overflow-hidden">
+                <div id="city-info-text" class="h-100"></div>
+              </div>
+              <div class="d-flex align-items-baseline">
+                <button id="btn-see-more" class="btn text-customblue fs-7 px-0 me-auto d-none">
+                  see more
+                </button>
+                <span class="blockquote-footer mt-3 ms-auto">wikipedia</span>
+              </div>
+            </div>
+            <!--LOCATION MAP LEAFLET-->
+            <div id="map" class="mt-3 w-50"></div>
+          </div>
+        </section>
+
+        <!--SCORES-->
+        <section id="city-scores">
+          <div class="shadow py-4 px-5 mb-3 bg-body-tertiary rounded">
+            <div class="fs-5 pb-3 mt-0 mb-1 text-customblue fw-medium">LIFE QUALITY SCORE</div>
+            <template id="quality-template">
+              <div class="row quality align-items-center">
+                <div
+                  class="col-6 col-md-3 quality-title text-customdarkblue"
+                  data-bs-toggle="tooltip"
+                  data-bs-html="true"
+                  data-bs-title="--tooltip-title"
+                  role="button">
+                  --title--
+                </div>
+                <div class="col-1 col-md-1 quality-punctuation text-end">--punctuation--</div>
+                <div class="col-5 col-md-8">
+                  <!--En los div vacios, se añade la barra de color por js-->
+                  <div class="quality-bar bg-secondary-subtle"><div></div></div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </section>
+
+        <!--COST OF LIVING-->
+        <section id="city-cost-of-living">
+          <div class="shadow py-4 px-5 mb-3 bg-body-tertiary rounded">
+            <div class="fs-5 pb-3 mt-0 mb-1 text-customblue fw-medium">COST OF LIVING</div>
+            <table id="cost-of-living" class="table">
+              <thead>
+                <tr>
+                  <th id="th-item" class="col-8">Item</th>
+                  <th id="th-price" class="col-4">Price</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider"></tbody>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!--SALARIES-->
+        <section id="city-salaries">
+          <div class="shadow py-4 px-5 mb-3 bg-body-tertiary rounded">
+            <div class="fs-5 pb-3 mt-0 mb-1 text-customblue fw-medium">JOB SALARIES</div>
+            <div class="container-table overflow-y-scroll">
+              <table id="salaries" class="table">
+                <thead>
+                  <tr>
+                    <th id="th-job" class="col-8">Job</th>
+                    <th id="th-salary" class="col-4">Median Salary</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+  </body>
+</html>

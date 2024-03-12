@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/bsCustom.css" rel="stylesheet" />
+    <!--FONTAWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <script src="js/index.js" type="module"></script>
+    <title>Home</title>
+  </head>
+
+  <body class="d-flex w-100 h-100 flex-column">
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!--MAIN-->
+    <main class="flex-grow-1">
+      <!-- SECCIÓN DE LA BÚSQUEDA-->
+      <section
+        id="search"
+        class="container-search d-flex align-items-center justify-content-center">
+        <div class="search rounded-3 p-6 bg-customdarkblue">
+          <div id="title-search" class="fs-4 text-white pb-3">
+            Discover the best cities to live and work in
+          </div>
+          <div class="position-relative">
+            <div id="input-group-search" class="input-group mb-2">
+              <span class="input-group-text">
+                <svg
+                  class="search-icon opacity-50"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+              </span>
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Find for a city"
+                class="form-control shadow-none p-0" />
+              <span class="input-group-text">
+                <svg
+                  id="search-icon-remove"
+                  class="search-icon opacity-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                </svg>
+              </span>
+            </div>
+            <div id="suggest-search" class="w-100 position-absolute top-100 start-0 bg-white pt-3">
+              <ul id="list-suggest-search"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN DE TODAS LAS CIUDADES-->
+      <section id="allCities" class="ms-3">
+        <div class="title-cities px-2 py-3 fs-5 fw-bold">All cities</div>
+        <div class="content-continents">
+          <!--Botones para los continentes-->
+        </div>
+        <div class="content-cities p-3">
+          <!-- Ciudades de los continentes -->
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+  </body>
+</html>

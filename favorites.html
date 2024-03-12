@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/bsCustom.css" rel="stylesheet" />
+    <!--FONTAWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="../js/favorites.js" type="module"></script>
+    <title>My favorites</title>
+  </head>
+
+  <body class="d-flex flex-column w-100 h-100">
+    <!--HEADER-->
+    <div id="header"></div>
+
+    <!--CONTENT-->
+    <div class="flex-grow-1 bg-customgray">
+      <main>
+        <h1 class="p-4">My favorites</h1>
+        <div class="favorites d-flex flex-wrap gap-3 row-gap-3 p-4">
+          <template id="favorite">
+            <div class="favorite-container d-flex flex-column">
+              <div class="flex-grow-1">
+                <a href="--href--">
+                  <img
+                    class="favorite-image w-100 h-100 object-fit-cover rounded"
+                    src="--src--"
+                    alt="--alt--"/>
+                </a>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <span class="name p-2">--nombre ciudad--</span>
+                <i
+                  class="trash fa-solid fa-trash-can text-customlightblue"
+                  role="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Remove from favorites"></i>
+              </div>
+            </div>
+          </template>
+        </div>
+      </main>
+    </div>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+  </body>
+</html>

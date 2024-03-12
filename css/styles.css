@@ -1,0 +1,141 @@
+/*Favorites (notification message & delete favorite)---*/
+.fade-out {
+  opacity: 0;
+  transition-duration: 1.5s;
+}
+
+/*#region CITIES----------------------------*/
+/*Tables------------------------------------*/
+
+.container-table {
+  max-height: 28rem;
+}
+
+.table thead tr th::before {
+  content: "\25B4";
+  margin-right: 0.3rem;
+}
+
+.table thead tr th.descending::before {
+  content: "\25BE";
+}
+
+.table thead tr th.disable::before {
+  opacity: 0.3;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--bs-customdarkblue);
+}
+
+/*city info---------------------------------*/
+.city-info,
+.image-city {
+  height: 18rem;
+}
+
+.city-info.expanded {
+  height: auto;
+}
+
+.image-city img {
+  object-fit: cover;
+}
+
+/*scores------------------------------------*/
+.quality-bar,
+.quality-bar div {
+  height: 0.75rem;
+}
+
+/*Map---------------------------------------*/
+#map {
+  height: 18rem;
+}
+/*#endregion CITIES-------------------------*/
+
+/*#region INDEX-----------------------------*/
+.container-search {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("../assets/index.jpg");
+  height: 25rem;
+}
+
+#title-search {
+  filter: drop-shadow(0px 0px 5px #000);
+}
+
+#input-group-search.active-suggestions > * {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#search-icon-remove {
+  display: none;
+}
+
+#search-icon-remove.active {
+  display: block;
+}
+
+/*Search suggests --------------------------*/
+#suggest-search {
+  display: none;
+}
+
+#suggest-search.active {
+  max-height: 21rem;
+  overflow: auto;
+  display: block;
+  border-bottom-left-radius: var(--bs-border-radius);
+  border-bottom-right-radius: var(--bs-border-radius);
+  border: solid 2px var(--bs-customgray);
+}
+
+#list-suggest-search li {
+  display: none;
+  margin-right: 2rem;
+}
+
+#list-suggest-search li:hover {
+  cursor: pointer;
+  background-color: var(--bs-customgray);
+}
+
+#suggest-search.active #list-suggest-search li {
+  display: block;
+}
+
+/*Continents & Cities-----------------------*/
+.columns {
+  column-count: auto;
+  column-width: 8rem;
+}
+
+.columns a {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+button::after {
+  border-bottom: 2px solid;
+  content: "";
+  display: block;
+  padding-top: 0.4em;
+  visibility: hidden;
+}
+
+button.active::after {
+  visibility: visible;
+}
+/*#endregion INDEX--------------------------*/
+
+/*#region FAVORITES-------------------------*/
+.favorite-container {
+  width: 18rem;
+  height: 12rem;
+}
+/*#endregion FAVORITES----------------------*/
