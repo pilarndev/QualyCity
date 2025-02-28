@@ -1,5 +1,5 @@
 # QualyCity
-QualyCity is a web application that allows users to learn about the quality of life in various cities around the world. If you want to know more details, watch this [video](./docs/qualycity.mp4).
+QualyCity is a web application that provides insights into the quality of life in cities around the world. Explore key factors that influence urban living and compare different locations effortlessly. The project is built using HTML, CSS, and JavaScript, with Bootstrap for styling and Leaflet for interactive maps. For more details, watch this [video](./docs/qualycity.mp4).
 
 ![](./docs/qualycity.gif)
 
